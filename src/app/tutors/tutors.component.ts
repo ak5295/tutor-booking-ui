@@ -9,12 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class TutorsComponent implements OnInit {
   tutors: any[];
 
-  constructor(private api: ApiService ) { }
+  constructor(private api: ApiService) {}
 
-  ngOnInit() {
-    this.api.getTutors().subscribe(result => {
-      this.tutors = result;
-    });
+  ngOnInit() { this.api.getTutors().subscribe(result => {
+    this.tutors = result;
+      });
   }
 
 }
