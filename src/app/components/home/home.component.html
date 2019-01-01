@@ -1,0 +1,21 @@
+<h4>Tutors</h4>
+
+<form>
+  <div>
+      <label>ID</label>
+      <input type=text name="id" [(ngModel)]="student.id" >
+  </div>
+  <div>
+    <label>First Name</label>
+    <input type=text name="firstName" [(ngModel)]="student.firstName" >
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input type=text name="lastName" [(ngModel)]="student.lastName" >
+  </div>
+  <button (click)="save()">Save</button>
+  <button (click)="addEntry()">Add Entry</button>
+  <button (click)="randomPointOnCircle()">randomPointOnCircle</button>
+</form>
+
+

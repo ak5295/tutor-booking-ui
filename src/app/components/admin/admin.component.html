@@ -1,0 +1,11 @@
+<form>
+  <div>
+    <label>First Name:</label>
+    <input type="text"  [(ngModel)]="student.firstName" name="firstName"/>
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input type="text" [(ngModel)]="student.lastName" name="lastName"/>
+  </div>
+  <button  (click)="save()">Save</button>
+</form>

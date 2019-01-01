@@ -1,4 +1,4 @@
-import { ApiService } from './../service/api.service';
+import { ApiService } from '../../service/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,7 +13,8 @@ export class TutorsComponent implements OnInit {
 
   ngOnInit() { this.api.getTutors().subscribe(result => {
     this.tutors = result;
-      });
+  });
+
   }
 
 }
