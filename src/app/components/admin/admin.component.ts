@@ -10,15 +10,28 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
 
   student = new Student();
-  constructor(private api: ApiService) { }
+  students: Student[] = [];
 
+  ienssn: Boolean;
+
+  constructor(private api: ApiService) {}
   ngOnInit() {
+    this.api.getStudents().subscribe( students => {
+      this.students = students;
+    });
+    // this.corsService .... {
+    //   this.ienssn = result.ienssn;
+    // }
+    this.ienssn = true;
   }
 
   save() {
     console.log(this.student);
     this.api.createStudent(this.student).subscribe( result => {
       console.log(result);
+      this.api.getStudents().subscribe( students => {
+        this.students = students;
+      });
     });
   }
 

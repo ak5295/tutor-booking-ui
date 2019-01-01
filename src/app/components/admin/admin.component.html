@@ -1,11 +1,33 @@
-<form>
+
+<div *ngIf="ienssn; else unauthorizedBlock">
   <div>
-    <label>First Name:</label>
-    <input type="text"  [(ngModel)]="student.firstName" name="firstName"/>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Firs tName</th>
+        <th>Last Name</th>
+      </tr>
+      <tr *ngFor="let student of students">
+        <td>{{student.id}}</td>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+      </tr>
+    </table>
   </div>
-  <div>
-    <label>Last Name:</label>
-    <input type="text" [(ngModel)]="student.lastName" name="lastName"/>
-  </div>
-  <button  (click)="save()">Save</button>
-</form>
+  <br>
+  <hr>
+  <form>
+    <div>
+      <label>First Name:</label>
+      <input type="text"  [(ngModel)]="student.firstName" name="firstName"/>
+    </div>
+    <div>
+      <label>Last Name:</label>
+      <input type="text" [(ngModel)]="student.lastName" name="lastName"/>
+    </div>
+    <button  (click)="save()">Save</button>
+  </form>
+</div>
+<ng-template #unauthorizedBlock>
+  <h3>You are not authorized</h3>
+</ng-template>
